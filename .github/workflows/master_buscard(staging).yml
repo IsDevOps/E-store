@@ -21,6 +21,7 @@ jobs:
         with:
           php-version: '8.1'
 
+<<<<<<< HEAD
       - name: Update Composer dependencies
         run: |
             composer update --prefer-dist --no-dev
@@ -31,6 +32,8 @@ jobs:
             composer install --prefer-dist --no-dev
 
 
+=======
+>>>>>>> 2b80ae2ef611e31a7290c47685b2c4f46e365d59
       - name: Check if composer.json exists
         id: check_files
         uses: andstor/file-existence-action@v1
