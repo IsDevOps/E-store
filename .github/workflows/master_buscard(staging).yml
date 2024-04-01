@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy PHP app to Azure Web App - buscard
+name: Build and deploy PHP app to Azure Web App - buscard(Staging)
 
 on:
   push:
@@ -30,13 +30,14 @@ jobs:
         run: |
             composer install --prefer-dist --no-dev
 
+
       - name: Check if composer.json exists
         id: check_files
         uses: andstor/file-existence-action@v1
         with:
           files: 'composer.json'
 
-      - name: Run composer install if composer.json exist
+      - name: Run composer install if composer.json exists
         if: steps.check_files.outputs.files_exists == 'true'
         run: composer validate --no-check-publish && composer install --prefer-dist --no-progress
 
@@ -54,7 +55,7 @@ jobs:
     needs: build
     environment:
       name: 'stage'
-      url: "${{ steps.deploy-to-webapp.outputs.webapp-url }}"
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     
     steps:
       - name: Download artifact from build job
@@ -69,7 +70,7 @@ jobs:
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
         with:
-          app-name: 'buscard'
+          app-name: 'buscard(Staging)'
           slot-name: 'Staging'
           package: .
-          publish-profile: "${{ secrets.AzureAppService_PublishProfile }}"
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile }}
