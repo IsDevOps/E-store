@@ -44,7 +44,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     environment:
-      name: 'Staging'
+      name: "Staging"
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     
     steps:
@@ -60,7 +60,7 @@ jobs:
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
         with:
-          app-name: 'buscard(Staging)'
+          app-name: 'buscard'
           slot-name: 'Staging'
           package: .
           publish-profile: ${{ secrets.AzureAppService_PublishProfile_273b7ad21d5c43c38109d6ba4accc9f3 }}
