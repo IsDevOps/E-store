@@ -63,4 +63,4 @@ jobs:
           app-name: 'buscard'
           slot-name: 'Staging'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_2455E75867E747A3BCC2A1AA6C7D96CE }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_36E5296F29264577B665B0787AF4A8F8 }}
