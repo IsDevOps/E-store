@@ -21,7 +21,7 @@ jobs:
         with:
           php-version: '8.1'
 
-      - name: Update Composer dependencies
+      - name: Update Composer dependencie
         run: |
             composer update --prefer-dist --no-dev
 
