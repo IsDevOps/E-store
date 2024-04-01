@@ -69,7 +69,7 @@ jobs:
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
         with:
-          app-name: 'buscard'
+          app-name: 'buscards'
           slot-name: 'Staging'
           package: .
           publish-profile: "${{ secrets.AzureAppService_PublishProfile_273b7ad21d5c43c38109d6ba4accc9f3 }}"
