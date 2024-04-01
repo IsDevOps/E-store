@@ -17,7 +17,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Setup PHP
-        uses: shivammathur/setup-php@v2  
+        uses: shivammathur/setup-php@v2
         with:
           php-version: '8.0'
 
@@ -30,8 +30,8 @@ jobs:
       - name: Install dependencies
         if: steps.check_files.outputs.files_exists == 'true'
         run: |
-          php --version
-          composer config "http-basic.nova.laravel.com" "${{ secrets.NOVA_USER}}" "${{secrets.NOVA_KEY}}"
+            php --version
+            composer config "http-basic.nova.laravel.com" "${{ secrets.NOVA_USER}}" "${{secrets.NOVA_KEY}}"
 
       - name: Run composer install if composer.json exists
         if: steps.check_files.outputs.files_exists == 'true'
@@ -69,4 +69,4 @@ jobs:
           app-name: 'buscard'
           slot-name: 'Stage'
           package: .
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_02865e81b70541d088e087e0de7ade37 }}
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_6484dd9c68fe40a4ac011487e9231a99 }}
