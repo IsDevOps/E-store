@@ -37,7 +37,7 @@ jobs:
       - name: Install Dependencies
         run: composer install --prefer-dist  # Installs dependencies with preference for pre-built packages
 
-      - name: Run composer install if composer.json exists
+      - name: Run composer install if composer.json exist
         if: steps.check_files.outputs.files_exists == 'true'
         run: composer validate --no-check-publish && composer install --prefer-dist --no-progress
 
