@@ -21,7 +21,7 @@ jobs:
         with:
           php-version: '8.2'
 
-      - name: Check if composer.json exists
+      - name: Check if composer.json exist
         id: check_files
         uses: andstor/file-existence-action@v1
         with:
