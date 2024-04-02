@@ -46,10 +46,10 @@ return [
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('busdb.mysql.database.azure.com'),
-            'host' => env('DB_HOST', 'busdb.mysql.database.azure.com'),
+            'host' => env('DB_HOST', 'e-store-server.mysql.database.azure.com'),
             'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'busdb'),
-            'username' => env('DB_USERNAME', 'admindb'),
+            'database' => env('DB_DATABASE', 'e-store-database'),
+            'username' => env('DB_USERNAME', 'busdb'),
             'password' => env('DB_PASSWORD', 'O9o55779759@'),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
