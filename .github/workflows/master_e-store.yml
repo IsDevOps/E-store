@@ -26,17 +26,7 @@ jobs:
         uses: andstor/file-existence-action@v1
         with:
           files: 'composer.json'
-
-      - uses: actions/checkout@v3  # Checkout code from repository
-
-      - uses: php-actions/composer@v6  # Installs Composer
-    
-      - name: Update Composer 
-        run: composer update --prefer-dist
-    
-      - name: Install Dependencies
-        run: composer install --prefer-dist  # Installs dependencies with preference for pre-built packages
-
+   
       - name: Run composer install if composer.json exist
         if: steps.check_files.outputs.files_exists == 'true'
         run: composer validate --no-check-publish && composer install --prefer-dist --no-progress
